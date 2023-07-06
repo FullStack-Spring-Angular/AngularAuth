@@ -9,4 +9,4 @@ Para ello es necesario clonar el proyecto y ejecutar la linea de comando **npm i
 
 ## Ejecutar proyecto
 
-Una vez terminado con el paso anterior, se debe tipear el moando **npm start** o **ng serve**.
+Una vez terminado con el paso anterior, se debe tipear el comando **npm start** o **ng serve**.
