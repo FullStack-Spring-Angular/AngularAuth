@@ -56,4 +56,29 @@ export class UserAuthService {
     }
     return {};
   }
+
+  public getTokenExpiration(): Date {
+    const token = this.getToken();
+    const tokenParts = token.split('.');
+  
+    if (tokenParts.length !== 3) {
+      // El token no tiene el formato esperado
+      return new Date(0); // Se considera como expirado
+    }
+  
+    const payload = JSON.parse(window.atob(tokenParts[1]));
+    if (!payload) {
+      // No se pudo decodificar el payload del token
+      return new Date(0); // Se considera como expirado
+    }
+  
+    if (!payload.exp) {
+      // El payload no contiene la propiedad 'exp' para la fecha de expiración
+      return new Date(0); // Se considera como expirado
+    }
+  
+    const expirationTimestamp = Number(payload.exp) * 1000;
+    return new Date(expirationTimestamp);
+  }
+  
 }
