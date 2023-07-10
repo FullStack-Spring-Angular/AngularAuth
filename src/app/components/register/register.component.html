@@ -4,6 +4,7 @@
         <div class="card border p-4">
         <h5 class="card-title text-center font-weight-bold mb-4">REGISTRATION FORM</h5>
           <form [formGroup]="registerForm" (ngSubmit)="register()">
+
             <input
             type="text"
             name="username"
@@ -15,6 +16,7 @@
             <small class="text-danger" *ngIf="registerForm.get('username').errors?.['required']">
                 Username is required.
             </small>
+
             <input
             type="email"
             name="email"
@@ -24,8 +26,33 @@
             class="form-control mb-3"
             >
             <small class="text-danger" *ngIf="registerForm.get('email').errors?.['required']">
-                Username is required.
+                Email is required.
             </small>
+            
+            <input
+            type="phone"
+            name="phone"
+            id="phone"
+            formControlName="phone"
+            placeholder="Enter your phone"
+            class="form-control mb-3"
+            >
+            <small class="text-danger" *ngIf="registerForm.get('phone').errors?.['required']">
+                Phone is required.
+            </small>
+
+            <input
+            type="address"
+            name="address"
+            id="address"
+            formControlName="address"
+            placeholder="Enter your address"
+            class="form-control mb-3"
+            >
+            <small class="text-danger" *ngIf="registerForm.get('address').errors?.['required']">
+                Address is required.
+            </small>
+
             <input
               type="password"
               name="password-verification"
@@ -34,6 +61,7 @@
               placeholder="Enter your password"
               class="form-control mb-3"
             >
+            
             <input
               type="password"
               name="password"
@@ -53,6 +81,7 @@
               type="submit"
               value="Register"
               class="btn btn-outline-primary form-control rounded-1"
+              [disabled]="!registrationEnabled"
             >
           </form>
         </div>

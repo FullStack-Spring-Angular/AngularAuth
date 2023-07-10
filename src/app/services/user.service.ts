@@ -19,6 +19,11 @@ export class UserService {
       headers: this.requestHeader,
     });
   }
+  public register(registerData: any) {
+    return this.httpclient.post(environment.AUTH_API + '/register', registerData, {
+      headers: this.requestHeader,
+    });
+  }
 
  /*  public forUser() {
     return this.httpclient.get(this.PATH_OF_API + '/forUser', {
