@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card border p-4">
+        <h5 class="card-title text-center font-weight-bold mb-4">REGISTRATION FORM</h5>
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <input
+            type="text"
+            name="username"
+            id="username"
+            formControlName="username"
+            placeholder="Enter your username"
+            class="form-control mb-3"
+            >
+            <small class="text-danger" *ngIf="registerForm.get('username').errors?.['required']">
+                Username is required.
+            </small>
+            <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            class="form-control mb-3"
+            >
+            <small class="text-danger" *ngIf="registerForm.get('email').errors?.['required']">
+                Username is required.
+            </small>
+            <input
+              type="password"
+              name="password-verification"
+              id="password-verification"
+              formControlName="password"
+              placeholder="Enter your password"
+              class="form-control mb-3"
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              formControlName="confirm_password"
+              placeholder="Confirm password"
+              class="form-control mb-3"
+            >
+            <div *ngIf="registerForm.errors">
+                <small class="text-danger" *ngIf="registerForm.errors['password-mismatch']">
+                    Las contraseñas no coinciden.
+                </small>
+            </div>
+
+  
+            <input
+              type="submit"
+              value="Register"
+              class="btn btn-outline-primary form-control rounded-1"
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

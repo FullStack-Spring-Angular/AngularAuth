@@ -32,7 +32,7 @@ export class LoginComponent {
           role: role,
           // Otros campos relacionados con el usuario
         };
-        this.userAuthService.setUser(user);
+        this.userAuthService.setUser(response.usuarios);
         this.userAuthService.setRoles(role);
         this.userAuthService.setToken(response.accessToken);
         if (role === 'Admin') {

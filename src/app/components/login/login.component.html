@@ -1,37 +1,44 @@
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-5">
-        <div class="card border p-4">
-          <div class="text-center mt-2 p-4">
-            <img
-              id="profile-img"
-              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-              class="profile-img-card"
-            />
-          </div>
-          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <input type="text"
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card border p-4">
+        <div class="text-center mt-2 p-4">
+          <img
+            id="profile-img"
+            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            class="profile-img-card"
+          />
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <input
+            type="text"
             ngModel
             name="username"
             id="username"
             placeholder="Enter your username"
             class="form-control mb-3"
-            >
+          >
 
-            <input type="password"
+          <input
+            type="password"
             ngModel
             name="password"
             id="password"
             placeholder="Enter your password"
             class="form-control mb-3"
-            >
+          >
 
-            <input type="submit"
+          <input
+            type="submit"
             value="Login"
-            class="btn btn-outline-primary form-control rounded-1">
+            class="btn btn-outline-primary form-control rounded-1"
+          >
         </form>
+
+        <div class="text-center mt-3">
+          <a routerLink="/register">Register</a>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

@@ -18,6 +18,8 @@ import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     LoginComponent,
     UserComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    ReactiveFormsModule
   ],
   providers: [
     AuthGuard,
